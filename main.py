@@ -37,7 +37,7 @@ def show(pattern, queue):
         count_pages = int(math.ceil(int(amount) / 60))
 
         for i in range(1, count_pages + 1):
-            r = req.get("https://allegro.pl/muzyka?string=" + str(pattern[1]) + "&p=" + str(i))
+            r = req.get("https://allegro.pl/" + str(pattern[0]) + "?string=" + str(pattern[1]) + "&p=" + str(i))
             for x in r.text.split("\""):
                 if "https://allegro.pl/oferta" in x or "https://allegrolokalnie.pl/oferta" in x:
                     result.add(x)
